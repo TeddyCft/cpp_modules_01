@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcoeffet <tcoeffet@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-08-05 10:53:06 by tcoeffet          #+#    #+#             */
-/*   Updated: 2025-08-05 10:53:06 by tcoeffet         ###   ########.fr       */
+/*   Created: 2025-08-05 10:56:12 by tcoeffet          #+#    #+#             */
+/*   Updated: 2025-08-05 10:56:12 by tcoeffet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,14 @@ void	Zombie::set_name(std::string name)
 std::string	Zombie::get_name(void)
 {return (this->name);}
 
+Zombie::Zombie()
+{
+	Zombie::set_name("");
+}
+
 Zombie::Zombie(std::string name)
 {
-	set_name(name);
-	return ;
+	Zombie::set_name(name);
 }
 
 Zombie::~Zombie(void)

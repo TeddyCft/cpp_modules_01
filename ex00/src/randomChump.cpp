@@ -9,3 +9,11 @@
 /*   Updated: 2025-08-04 14:24:45 by tcoeffet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Zombie.hpp"
+
+void	randomChump(std::string name)
+{
+	Zombie newzomb(name);
+	newzomb.announce();
+}

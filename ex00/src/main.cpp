@@ -10,5 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iostream"
+#include "Zombie.hpp"
 
+int	main(void)
+{
+	Zombie *tom;
+	std::string name = "Tom";
+
+	tom = newZombie(name);
+	tom->announce();
+	delete(tom);
+	randomChump("Jerry");
+	return (0);
+}

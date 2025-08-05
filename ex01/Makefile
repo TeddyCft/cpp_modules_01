@@ -3,15 +3,14 @@
 MAKEFLAGS += --no-print-directory
 QUIET = 	
 
-NAME = 		ex00
+NAME = 		ex01
 INCLUDES =	./includes
 CC = $(QUIET) c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 FILES =		main \
-			newZombie \
-			randomChump \
-			class/zombie
+			zombiehorde \
+			class/Zombie
 
 SRC_DIR		= 	src/
 SRC_FILES	=	$(addsuffix .cpp, $(FILES))

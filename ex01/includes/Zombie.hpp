@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcoeffet <tcoeffet@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-08-04 14:26:44 by tcoeffet          #+#    #+#             */
-/*   Updated: 2025-08-04 14:26:44 by tcoeffet         ###   ########.fr       */
+/*   Created: 2025-08-05 10:55:45 by tcoeffet          #+#    #+#             */
+/*   Updated: 2025-08-05 10:55:45 by tcoeffet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define ZOMBIE_HPP
 
 #include <iostream>
+
+
 
 class Zombie
 {
@@ -23,6 +25,7 @@ class Zombie
 	void		set_name(std::string name);
 	void		announce(void);
 
+	Zombie(void);
 	Zombie(std::string name);
 	~Zombie(void);
 
@@ -31,7 +34,6 @@ class Zombie
 	std::string name;
 }	;
 
-Zombie* newZombie(std::string name);
-void 	randomChump(std::string name);
+Zombie* zombieHorde(int N, std::string nam);
 
 #endif
