@@ -3,14 +3,12 @@
 MAKEFLAGS += --no-print-directory
 QUIET = 	
 
-NAME = 		ex01
+NAME = 		ex02
 INCLUDES =	./includes
 CC = $(QUIET) c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILES =		main \
-			zombiehorde \
-			class/Zombie
+FILES =		main
 
 SRC_DIR		= 	src/
 SRC_FILES	=	$(addsuffix .cpp, $(FILES))
@@ -35,7 +33,6 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 
 $(OBJ_DIR) :
 				$(QUIET) mkdir -p $(OBJ_DIR)
-				$(QUIET) mkdir -p $(OBJ_DIR)/class
 
 #-rules----------------------------------------------------------------#
 

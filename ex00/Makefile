@@ -19,8 +19,6 @@ SRC 		=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 
 OBJ_DIR		= 	obj/
 OBJ			=	$(patsubst $(SRC_DIR)%.cpp, $(OBJ_DIR)%.o, $(SRC))
-OBJ_MAIN	=	$(patsubst $(SRC_DIR)%.cpp, $(OBJ_DIR)%.o, $(SRC_DIR)$(MAIN))
-
 
 #----------------------------------------------------------------------#
 
