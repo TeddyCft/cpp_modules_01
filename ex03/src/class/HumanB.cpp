@@ -13,34 +13,35 @@
 #include "Weapon.hpp"
 #include "humanB.hpp"
 
-bool HumanB::hasWeapon(void)
+bool HumanB::checkHasWeapon(void)
 {
-	if (!this->weapon)
-		return (false);
-	return (true);
+	return (this->_weapon != NULL);
 }
 
 void HumanB::attack(void)
 {
-	if (!this->hasWeapon())
+	if (!this->checkHasWeapon())
 		return ;
-	std::cout << this->getName() << "attacks with their ";
+	std::cout << this->getName() << " attacks with their ";
 	std::cout << this->getWeapon()->getType() << std::endl;
 }
 
 std::string HumanB::getName(void)
-{ return this->name; }
+{ return this->_name; }
 void HumanB::setName(std::string name)
-{ this->name = name; }
+{ this->_name = name; }
 
 Weapon *HumanB::getWeapon(void)
-{ return this->weapon; }
+{ return this->_weapon; }
 
-void HumanB::setWeapon(Weapon weapon)
-{ this->weapon = &weapon ;}
+void HumanB::setWeapon(Weapon &weapon)
+{ 
+	this->_weapon = &weapon ;
+}
 
-HumanB::HumanB(std::string name) : name(name)
+HumanB::HumanB(std::string name) : _name(name), _weapon(NULL)
 {
+	this->_name = name;
 }
 
 HumanB::~HumanB(void)

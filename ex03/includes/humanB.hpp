@@ -20,8 +20,8 @@ class HumanB
 {
 	public :
 	
-		void setWeapon(Weapon weapon);
-		bool hasWeapon(void);
+		void setWeapon(Weapon &weapon);
+		bool checkHasWeapon(void);
 		Weapon *getWeapon(void);
 
 		void setName(std::string name);
@@ -32,8 +32,8 @@ class HumanB
 		~HumanB(void);
 
 	private :
-		std::string	name;
-		Weapon		*weapon;
+		std::string	_name;
+		Weapon		*_weapon;
 
 }		;
 

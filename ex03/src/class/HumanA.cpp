@@ -15,17 +15,16 @@
 
 void HumanA::attack(void)
 {
-	std::cout << this->getName() << "attacks with their ";
-	std::cout << this->weapon.getType() << std::endl;
+	std::cout << this->getName() << " attacks with their " << this->_weapon.getType() << std::endl;
 }
 
 std::string HumanA::getName(void)
-{ return this->name; }
+{ return this->_name; }
 
 void HumanA::setName(std::string name)
-{ this->name = name; }
+{ this->_name = name; }
 
-HumanA::HumanA(std::string name, Weapon &weapon) : name(name), weapon(weapon)
+HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon)
 {
 }
 
