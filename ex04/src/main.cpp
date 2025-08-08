@@ -12,6 +12,34 @@
 
 #include "ex04.hpp"
 
+std::string ft_replace_str(std::string s1, std::string s2, std::string line)
+{
+	std::string newLine = "";
+	static int	first;
+	size_t 		i = 0;
+	int 		j;
+
+	if (first != 0)
+		newLine.append("\n");
+	first = 1;
+	while (true && !line.empty())
+	{
+		j =	line.find(s1, i);
+		if (j == -1)
+		{
+			newLine.append(line, i, line.size() - i);
+			break ;
+		}
+		newLine.append(line, i, j - i);
+		newLine.append(s2);
+		i = j + s1.size();
+		if (i == line.size())
+			break ;
+	}
+	
+	return (newLine);
+}
+
 void read_and_replace(std::string s1, std::string s2, std::string infile, std::string outfile)
 {
 	(void) s1;
@@ -27,18 +55,14 @@ void read_and_replace(std::string s1, std::string s2, std::string infile, std::s
 		return ;
 	}
 	
-	std::string buff("");
+	std::string line("");
 	while (1)
 	{
-		ifs >> buff;
-		if (!ifs.eof())
-			ofs << " ";
-		else
+		std::getline(ifs, line);
+		line = ft_replace_str(s1, s2, line);
+		ofs << line;
+		if (ifs.eof())
 			break ;
-		if (buff == s1)
-			ofs << s2;
-		else
-			ofs << buff;
 		
 	}
 	ifs.close();
@@ -57,5 +81,4 @@ int main (int ac, char **av)
 	s1 = av[2];
 	s2 = av[3];
 	read_and_replace(s1, s2, infile, outfile);
-
 }
