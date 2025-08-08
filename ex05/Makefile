@@ -3,12 +3,13 @@
 MAKEFLAGS += --no-print-directory
 QUIET = 	
 
-NAME = 		ex04
+NAME = 		ex05
 INCLUDES =	./includes
 CC = $(QUIET) c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
 FILES =		main \
+			class/Harl
 			
 SRC_DIR		= 	src/
 SRC_FILES	=	$(addsuffix .cpp, $(FILES))
@@ -33,6 +34,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 
 $(OBJ_DIR) :
 				$(QUIET) mkdir -p $(OBJ_DIR)
+				$(QUIET) mkdir -p $(OBJ_DIR)/class
 
 #-rules----------------------------------------------------------------#
 
