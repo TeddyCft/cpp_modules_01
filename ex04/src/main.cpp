@@ -15,39 +15,43 @@
 std::string ft_replace_str(std::string s1, std::string s2, std::string line)
 {
 	std::string newLine = "";
-	static int	first;
+	static int	skipFirst;
 	size_t 		i = 0;
 	int 		j;
 
-	if (first != 0)
+	if (skipFirst == 0)
+		skipFirst = 1;
+	else
 		newLine.append("\n");
-	first = 1;
+
 	while (true && !line.empty())
 	{
-		j =	line.find(s1, i);
-		if (j == -1)
+		j =	line.find(s1, i); //searching for s1 in line
+
+		if (j == -1) // if s1 not found, append what remains in line
 		{
 			newLine.append(line, i, line.size() - i);
 			break ;
 		}
+		
+		//replace the content of the s1 found, from the content of s2
 		newLine.append(line, i, j - i);
 		newLine.append(s2);
 		i = j + s1.size();
 		if (i == line.size())
 			break ;
 	}
-	
 	return (newLine);
 }
 
 void read_and_replace(std::string s1, std::string s2, std::string infile, std::string outfile)
 {
-	(void) s1;
-	(void) s2;
+	//open infile stream
 	std::ifstream ifs(infile.c_str());
 	if (!ifs.is_open())
 	return ;
 	
+	//open outfile stream
 	std::ofstream ofs(outfile.c_str());
 	if (!ofs.is_open())
 	{
@@ -55,6 +59,7 @@ void read_and_replace(std::string s1, std::string s2, std::string infile, std::s
 		return ;
 	}
 	
+	//call for each line of infile and replace its content if needed
 	std::string line("");
 	while (1)
 	{
@@ -65,6 +70,7 @@ void read_and_replace(std::string s1, std::string s2, std::string infile, std::s
 			break ;
 		
 	}
+	//close infine and outfile stream
 	ifs.close();
 	ofs.close();
 }
@@ -80,5 +86,6 @@ int main (int ac, char **av)
 	outfile = infile + ".replace";
 	s1 = av[2];
 	s2 = av[3];
+
 	read_and_replace(s1, s2, infile, outfile);
 }
