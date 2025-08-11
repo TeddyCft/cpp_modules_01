@@ -38,27 +38,21 @@ void	Harl::complain(std::string level)
 		filter++;
 	switch (filter)
 	{
+		case 0:
+			this->_debug();
+		case 1:
+			this->_info();
+		case 2:
+			this->_warning();
+		case 3:
+		{
+			this->_error();
+			break ;
+		}
 		default :
 		{
 			std::cout << HRL_CLR << "[ Probably complaining about insignificant problems ]" << HRL_CLS << std::endl;
-			return ;
+			break ;
 		}
-		case 0:
-		{
-			this->_debug();
-			filter ++;
-		}
-		case 1:
-		{
-			this->_info();
-			filter ++;
-		}
-		case 2:
-		{
-			this->_warning();
-			filter ++;
-		}
-		case 3:
-			this->_error();
 	}
 }
