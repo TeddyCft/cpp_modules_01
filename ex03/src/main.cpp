@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "humanA.hpp"
-#include "humanB.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 #include "Weapon.hpp"
 
 int main()

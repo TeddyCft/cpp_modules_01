@@ -15,14 +15,8 @@
 std::string ft_replace_str(std::string s1, std::string s2, std::string line)
 {
 	std::string newLine = "";
-	static int	skipFirst;
 	size_t 		i = 0;
 	int 		j;
-
-	if (skipFirst == 0)
-		skipFirst = 1;
-	else
-		newLine.append("\n");
 
 	while (true && !line.empty())
 	{
@@ -44,19 +38,23 @@ std::string ft_replace_str(std::string s1, std::string s2, std::string line)
 	return (newLine);
 }
 
-void read_and_replace(std::string s1, std::string s2, std::string infile, std::string outfile)
+int read_and_replace(std::string s1, std::string s2, std::string infile, std::string outfile)
 {
 	//open infile stream
 	std::ifstream ifs(infile.c_str());
 	if (!ifs.is_open())
-	return ;
+	{
+		std::cerr << "error : failed to open file " << infile << std::endl;
+		return (1);
+	}	
 	
 	//open outfile stream
 	std::ofstream ofs(outfile.c_str());
 	if (!ofs.is_open())
 	{
+		std::cerr << "error : failed to open file " << outfile << std::endl;
 		ifs.close();
-		return ;
+		return (1);
 	}
 	
 	//call for each line of infile and replace its content if needed
@@ -64,22 +62,24 @@ void read_and_replace(std::string s1, std::string s2, std::string infile, std::s
 	while (1)
 	{
 		std::getline(ifs, line);
-		line = ft_replace_str(s1, s2, line);
+		if (!s1.empty())
+			line = ft_replace_str(s1, s2, line);
 		ofs << line;
 		if (ifs.eof())
 			break ;
+		ofs << std::endl;
 		
 	}
 	//close infine and outfile stream
 	ifs.close();
 	ofs.close();
+	return (0);
 }
 
 int main (int ac, char **av)
 {
 	if (ac != 4)
 		return (std::cout << "error : bad arguments" << std::endl, 1);
-	
 	std::string infile, outfile, s1, s2;
 
 	infile = av[1];
@@ -87,5 +87,5 @@ int main (int ac, char **av)
 	s1 = av[2];
 	s2 = av[3];
 
-	read_and_replace(s1, s2, infile, outfile);
+	return (read_and_replace(s1, s2, infile, outfile));
 }

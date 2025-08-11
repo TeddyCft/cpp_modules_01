@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
-#include "humanA.hpp"
+#include "HumanA.hpp"
 
 void HumanA::attack(void)
 {

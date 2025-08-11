@@ -34,10 +34,15 @@ void	Harl::complain(std::string level)
 	int filter = 0;
 	std::string lvlstr[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-	while (level != lvlstr[filter])
+	while (level != lvlstr[filter] && filter != 4)
 		filter++;
 	switch (filter)
 	{
+		default :
+		{
+			std::cout << HRL_CLR << "[ Probably complaining about insignificant problems ]" << HRL_CLS << std::endl;
+			return ;
+		}
 		case 0:
 		{
 			this->_debug();

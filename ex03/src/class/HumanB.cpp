@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
-#include "humanB.hpp"
+#include "HumanB.hpp"
 
 bool HumanB::checkHasWeapon(void)
 {

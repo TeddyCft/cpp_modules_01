@@ -11,7 +11,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 FILES =		main \
 			newZombie \
 			randomChump \
-			class/zombie
+			class/Zombie
 
 SRC_DIR		= 	src/
 SRC_FILES	=	$(addsuffix .cpp, $(FILES))
