@@ -11,22 +11,22 @@
 
 void	Harl::_debug(void)
 {
-	std::cout << HRL_CLR <<"I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << HRL_CLS << std::endl;
+	std::cout << HRL_CLR <<"🐞 I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << HRL_CLS << std::endl;
 }
 
 void	Harl::_info(void)
 {
-	std::cout << HRL_CLR <<"I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << HRL_CLS << std::endl;
+	std::cout << HRL_CLR <<"ℹ️  I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << HRL_CLS << std::endl;
 }
 
 void	Harl::_warning(void)
 {
-	std::cout << HRL_CLR <<"I think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month." << HRL_CLS << std::endl;
+	std::cout << HRL_CLR <<"⚠️  I think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month." << HRL_CLS << std::endl;
 }
 
 void	Harl::_error(void)
 {
-	std::cout << HRL_CLR <<"This is unacceptable! I want to speak to the manager now." << HRL_CLS << std::endl;
+	std::cout << HRL_CLR <<"❌ This is unacceptable! I want to speak to the manager now." << HRL_CLS << std::endl;
 }
 
 void	Harl::complain(std::string level)

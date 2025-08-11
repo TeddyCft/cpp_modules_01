@@ -10,7 +10,6 @@ class	Harl
 	public :
 
 	void	complain(std::string level);
-	void	listen(std::string lvlstr[4], int filter);
 	Harl(void){}
 	~Harl(void){}
 

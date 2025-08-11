@@ -18,14 +18,9 @@ int main (int ac, char **av)
 {
 	Harl	harl;
 	std::string lvlstr[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	int filter = 0;
 
 	if (arg_check(ac, av, lvlstr))
 		return (1);
-	
-	//get the filter level
-	while (av[1] != lvlstr[filter])
-		filter++;
-	harl.listen(lvlstr, filter);
+	harl.complain(av[1]);
 	return (0);
 }
