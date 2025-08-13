@@ -21,7 +21,10 @@ int	main(void)
 
 	Zombie *horde;
 	horde = zombieHorde(N, "Michel");
+	if (!horde)
+		return (1);
 	for (size_t i = 0; i < N; i++)
 	 	horde[i].announce();
 	delete[] horde;
+	return (0);
 }
