@@ -18,6 +18,8 @@ int	main(void)
 	std::string name = "Tom";
 
 	tom = newZombie(name);
+	if (!tom)
+		return (1);
 	tom->announce();
 	delete(tom);
 	randomChump("Jerry");
